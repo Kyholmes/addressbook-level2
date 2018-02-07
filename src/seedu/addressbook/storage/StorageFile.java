@@ -52,6 +52,15 @@ public class StorageFile {
         }
     }
 
+    //add new storage write to read only exception
+    public static class StorageWriteToReadOnlyException extends StorageOperationException
+    {
+        public StorageWriteToReadOnlyException(String message)
+        {
+            super(message);
+        }
+    }
+
     private final JAXBContext jaxbContext;
 
     public final Path path;
@@ -119,7 +128,7 @@ public class StorageFile {
      *    does not exist.
      * @throws StorageOperationException if there were errors reading and/or converting data from file.
      */
-    public AddressBook load() throws StorageOperationException {
+    public AddressBook load() throws StorageOperationException, StorageWriteToReadOnlyException {
 
         if (!Files.exists(path) || !Files.isRegularFile(path)) {
             return new AddressBook();
@@ -140,7 +149,7 @@ public class StorageFile {
             throw new AssertionError("A non-existent file scenario is already handled earlier.");
         // other errors
         } catch (IOException ioe) {
-            throw new StorageOperationException("Error writing to file: " + path);
+            throw new StorageWriteToReadOnlyException("The file: " + path + "is read only. Error writing to this file.");
         } catch (JAXBException jaxbe) {
             throw new StorageOperationException("Error parsing file data format");
         } catch (IllegalValueException ive) {
