@@ -54,6 +54,9 @@ public class FindCommand extends Command {
         return matchedPersons;
     }
 
+    /**
+     * convert the keywords set to string array, iterate the array to convert the string to lower case and convert back to set again
+     */
     private void changeKeywordToLowerCaseInSet()
     {
         String[] keywordArray = this.keywords.toArray(new String[keywords.size()]);
