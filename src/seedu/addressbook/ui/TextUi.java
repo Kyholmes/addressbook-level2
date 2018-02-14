@@ -21,12 +21,6 @@ import seedu.addressbook.data.person.ReadOnlyPerson;
  */
 public class TextUi {
 
-    /** A decorative prefix added to the beginning of lines printed by AddressBook */
-    private static final String LINE_PREFIX = "|| ";
-
-    /** A platform independent line separator. */
-    private static final String LS = System.lineSeparator();
-
     private static final String DIVIDER = "===================================================";
 
     /** Format of indexed list item */
@@ -79,7 +73,8 @@ public class TextUi {
      * @return command (full line) entered by the user
      */
     public String getUserCommand() {
-        out.print(LINE_PREFIX + "Enter command: ");
+
+        out.print(new Formatter().formatTextForDisplay(1, "Enter command: "));
         String fullInputLine = in.nextLine();
 
         // silently consume all ignored lines
@@ -116,7 +111,7 @@ public class TextUi {
     /** Shows message(s) to the user */
     public void showToUser(String... message) {
         for (String m : message) {
-            out.println(LINE_PREFIX + m.replace("\n", LS + LINE_PREFIX));
+            out.println(new Formatter().formatTextForDisplay(2, m));
         }
     }
 
@@ -169,4 +164,31 @@ public class TextUi {
         return String.format(MESSAGE_INDEXED_LIST_ITEM, visibleIndex, listItem);
     }
 
+    /**
+     * formatter class to format text for display
+     */
+    static class Formatter{
+        public String formatTextForDisplay(int displayType, String textToDisplay){
+
+            /** A decorative prefix added to the beginning of lines printed by AddressBook */
+            final String LINE_PREFIX = "|| ";
+
+            /** A platform independent line separator. */
+            final String LS = System.lineSeparator();
+
+            String displayString = "";
+
+            switch (displayType){
+                case 1:         //type 1 is display "Enter command"
+                    displayString = LINE_PREFIX + textToDisplay;
+                    break;
+
+                case 2:         //type 2 is display messages to user
+                    displayString = LINE_PREFIX + textToDisplay.replace("\n", LS + LINE_PREFIX);
+                    break;
+            }
+
+            return displayString;
+        }
+    }
 }
