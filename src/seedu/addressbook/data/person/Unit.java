@@ -2,13 +2,13 @@ package seedu.addressbook.data.person;
 
 public class Unit {
     public static final String EXAMPLE = "123";
-    public final int unit;
+    public final String unit;
 
     /**
      * Construct unit object with empty block value
      */
     public Unit(){
-        this.unit = 0;
+        this.unit = "";
     }
 
     /**
@@ -17,24 +17,24 @@ public class Unit {
      */
     public Unit(String unit){
 
-        this.unit = Integer.parseInt(unit);
+        this.unit = unit;
     }
 
 
     @Override
     public String toString() {
-        return String.valueOf(this.unit);
+        return this.unit;
     }
 
     @Override
     public boolean equals(Object other) {
         return other == this // short circuit if same object
                 || (other instanceof Unit // instanceof handles nulls
-                && this.unit == ((Unit) other).unit );// state check
+                && this.unit.equals(((Unit) other).unit));// state check
     }
 
     @Override
     public int hashCode() {
-        return Integer.hashCode(this.unit);
+        return unit.hashCode();
     }
 }
