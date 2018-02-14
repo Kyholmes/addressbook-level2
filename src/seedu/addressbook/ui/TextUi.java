@@ -168,6 +168,13 @@ public class TextUi {
      * formatter class to format text for display
      */
     static class Formatter{
+
+        /**
+         *
+         * @param displayType format text either in "Enter command" format or messages to user
+         * @param textToDisplay text that want to be formatted
+         * @return formatted text
+         */
         public String formatTextForDisplay(int displayType, String textToDisplay){
 
             /** A decorative prefix added to the beginning of lines printed by AddressBook */
