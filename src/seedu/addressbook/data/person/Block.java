@@ -1,32 +1,26 @@
 package seedu.addressbook.data.person;
 
-import seedu.addressbook.data.exception.IllegalValueException;
 
 public class Block {
     public static final String EXAMPLE = "123";
-    public static final String MESSAGE_BLOCK_CONSTRAINTS = "Block should be integer";
-    public static final String NAME_VALIDATION_REGEX = "^[1-9]\\d{1,4}";
     public final int block;
 
     /**
-     * Validates given block.
-     *
-     * @throws IllegalValueException if given name string is invalid.
+     * Construct block object with empty block value
      */
-    public Block(String block) throws IllegalValueException {
-
-        if (!isValidBlock(block)) {
-            throw new IllegalValueException(MESSAGE_BLOCK_CONSTRAINTS);
-        }
-        this.block = Integer.parseInt(block);
+    public Block(){
+        this.block = 0;
     }
 
     /**
-     * Returns true if the given block is a valid integer.
+     * Construct block object with value given.
+     *
      */
-    public static boolean isValidBlock(String test) {
-        return test.matches(NAME_VALIDATION_REGEX);
+    public Block(String block){
+
+        this.block = Integer.parseInt(block);
     }
+
 
     @Override
     public String toString() {
