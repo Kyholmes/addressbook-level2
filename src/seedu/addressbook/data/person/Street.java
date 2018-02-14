@@ -36,6 +36,6 @@ public class Street {
 
     @Override
     public int hashCode() {
-        return street.hashCode();
+        return this.street.hashCode();
     }
 }
