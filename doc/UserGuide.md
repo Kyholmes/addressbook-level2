@@ -113,6 +113,16 @@ Examples:
   `viewall 1`<br>
   Views all details of the 1st person in the results of the `find` command.
 
+### Finding all persons who live at the same area: `location`
+Finds persons whose address contain the postal code.<br>
+Format: `location POSTAL_CODE`
+
+> List all persons whose address has the `POSTAL_CODE`.
+
+Examples: 
+* `location 638475`<br>
+* `location 628476`<br>
+
 ### Clearing all entries : `clear`
 Clears all entries from the address book.<br>
 Format: `clear`  
