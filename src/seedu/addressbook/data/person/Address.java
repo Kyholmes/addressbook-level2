@@ -52,7 +52,7 @@ public class Address {
 
         this.unit = new Unit(addressComponent[2]);
 
-        this.postalCode = new PostalCode(addressComponent[3]);
+        this.postalCode = new PostalCode(Integer.parseInt(addressComponent[3].trim()));
     }
 
     /**

@@ -1,23 +1,24 @@
 package seedu.addressbook.data.person;
 
+import javafx.beans.property.IntegerProperty;
 import javafx.geometry.Pos;
 
 public class PostalCode {
     public static final String EXAMPLE = "634972";
-    public final String postalCode;
+    public final int postalCode;
 
     /**
      * Construct postal code object with empty block value
      */
     public PostalCode(){
-        this.postalCode = "";
+        this.postalCode = 0;
     }
 
     /**
      * Construct postal code object with value given.
      *
      */
-    public PostalCode(String postalCode){
+    public PostalCode(int postalCode){
 
         this.postalCode = postalCode;
     }
@@ -25,18 +26,18 @@ public class PostalCode {
 
     @Override
     public String toString() {
-        return this.postalCode;
+        return String.valueOf(postalCode);
     }
 
     @Override
     public boolean equals(Object other) {
         return other == this // short circuit if same object
                 || (other instanceof PostalCode // instanceof handles nulls
-                && this.postalCode.equals(((PostalCode) other).postalCode));// state check
+                && this.postalCode == (Integer) ((PostalCode) other).postalCode);// state check
     }
 
     @Override
     public int hashCode() {
-        return this.postalCode.hashCode();
+        return Integer.hashCode(this.postalCode);
     }
 }

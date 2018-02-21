@@ -40,9 +40,9 @@ public class LocationCommand extends Command{
      */
     private List<ReadOnlyPerson> getPersonWhoLiveAt(String postalCode) {
         final List<ReadOnlyPerson> matchedPersons = new ArrayList<>();
-        PostalCode specifiedPostalCode = new PostalCode(postalCode);
+        PostalCode specifiedPostalCode = new PostalCode(Integer.parseInt(postalCode.trim()));
         for (ReadOnlyPerson person : addressBook.getAllPersons()) {
-            if(person.getAddress().postalCode.equals(specifiedPostalCode)) {
+            if(specifiedPostalCode.equals(person.getAddress().postalCode)) {
                 matchedPersons.add(person);
             }
         }
