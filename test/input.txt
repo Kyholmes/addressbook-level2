@@ -112,6 +112,20 @@
   find Charlie Betsy
 
 ##########################################################
+# test location command
+##########################################################
+
+  # should consider no keywords as invalid command format
+  location
+
+  # does not match if none live at that area
+  location 123456
+  location 098123
+
+  # match if found person who live at that area
+  location 324643
+
+##########################################################
 # test delete person command
 ##########################################################
 

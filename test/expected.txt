@@ -25,6 +25,9 @@
 || viewall: Views the non-private details of the person identified by the index number in the last shown person listing.
 || Parameters: INDEX
 || Example: viewall 1
+|| location: Finds all persons who live in the specified postal code and displays them as a list with index numbers.
+|| Parameters: POSTAL_CODE
+|| Example: location 847596
 || help: Shows program usage instructions.
 || Example: help
 || exit: Exits the program.
@@ -241,6 +244,29 @@
 || 	2. Charlie Dickson Email: charlie.d@nus.edu.sg Address: 123, Charlie street, #01-01, 324643 Tags: [school][friends]
 || 
 || 2 persons listed!
+|| ===================================================
+|| Enter command: || [Command entered:  location]
+|| Invalid command format! 
+|| location: Finds all persons who live in the specified postal code and displays them as a list with index numbers.
+|| Parameters: POSTAL_CODE
+|| Example: location 847596
+|| ===================================================
+|| Enter command: || [Command entered:  location 123456]
+|| 
+|| 0 persons listed!
+|| ===================================================
+|| Enter command: || [Command entered:  location 098123]
+|| 
+|| 0 persons listed!
+|| ===================================================
+|| Enter command: || [Command entered:  location 324643]
+|| 	1. Adam Brown Phone: 111111 Email: adam@gmail.com Address: 123, Adam street, #01-01, 324643 Tags: 
+|| 	2. Betsy Choo Tags: [secretive]
+|| 	3. Charlie Dickson Email: charlie.d@nus.edu.sg Address: 123, Charlie street, #01-01, 324643 Tags: [school][friends]
+|| 	4. Dickson Ee Phone: 444444 Address: 123, Dickson street, #01-01, 324643 Tags: [friends]
+|| 	5. Esther Potato Phone: 555555 Email: esther@not.a.real.potato Tags: [tubers][starchy]
+|| 
+|| 5 persons listed!
 || ===================================================
 || Enter command: || [Command entered:  delete]
 || Invalid command format! 
