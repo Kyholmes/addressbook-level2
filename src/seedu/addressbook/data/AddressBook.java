@@ -26,7 +26,7 @@ public class AddressBook {
 
     private final UniquePersonList allPersons;
     private final UniqueTagList allTags; // can contain tags not attached to any person
-    private ArrayList<Tagging> taggingList = new ArrayList<Tagging>();
+    private static ArrayList<Tagging> taggingList = new ArrayList<Tagging>();
     /**
      * Creates an empty address book.
      */
@@ -126,7 +126,7 @@ public class AddressBook {
     /**
      *Return a list of tagging which store all sessions where a tag is added or removed from a specific person
      */
-    public ArrayList<Tagging> getTaggingList() {
+    public static ArrayList<Tagging> getTaggingList() {
         return taggingList;
     }
 

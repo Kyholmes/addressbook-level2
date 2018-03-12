@@ -7,22 +7,22 @@ import seedu.addressbook.data.person.Person;
  */
 public class Tagging {
 
-    private Person person;
-    private Tag tag;
+    private String personName;
+    private String tagName;
     private String methodType;
 
-    public Tagging(Person person, Tag tag, String methodType) {
-        this.person = person;
-        this.tag = tag;
+    public Tagging(String personName, String tagName, String methodType) {
+        this.personName = personName;
+        this.tagName = tagName;
         this.methodType = methodType;
     }
 
-    public Person getPerson() {
-        return this.person;
+    public String getPersonName() {
+        return this.personName;
     }
 
-    public Tag getTag() {
-        return this.tag;
+    public String getTagName() {
+        return this.tagName;
     }
 
     public String getMethodType() {
