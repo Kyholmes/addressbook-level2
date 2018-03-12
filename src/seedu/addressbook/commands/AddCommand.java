@@ -3,7 +3,6 @@ package seedu.addressbook.commands;
 import java.util.HashSet;
 import java.util.Set;
 
-import seedu.addressbook.data.AddressBook;
 import seedu.addressbook.data.exception.IllegalValueException;
 import seedu.addressbook.data.person.Address;
 import seedu.addressbook.data.person.Email;
@@ -13,7 +12,6 @@ import seedu.addressbook.data.person.Phone;
 import seedu.addressbook.data.person.ReadOnlyPerson;
 import seedu.addressbook.data.person.UniquePersonList;
 import seedu.addressbook.data.tag.Tag;
-import seedu.addressbook.data.tag.Tagging;
 import seedu.addressbook.data.tag.UniqueTagList;
 
 /**
@@ -47,7 +45,6 @@ public class AddCommand extends Command {
         final Set<Tag> tagSet = new HashSet<>();
         for (String tagName : tags) {
             tagSet.add(new Tag(tagName));
-            AddressBook.getTaggingList().add(new Tagging(name, tagName, COMMAND_WORD));
         }
         this.toAdd = new Person(
                 new Name(name),
